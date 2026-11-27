@@ -1,0 +1,19 @@
+### List items
+GET http://localhost:8080/api/items
+
+### Add a new character
+POST http://localhost:8080/api/items
+Content-Type: application/json
+
+{"name": "Furina", "itemType": "CHARACTER", "rarity": 5, "pool": "LIMITED"}
+
+### Try adding a duplicate (should fail with 409)
+POST http://localhost:8080/api/items
+Content-Type: application/json
+
+{"name": "furina", "itemType": "CHARACTER", "rarity": 5, "pool": "LIMITED"}
+
+### Try deleting a built-in item (should fail with 409)
+DELETE http://localhost:8080/api/items/1
+
+ ### needs the ultimate so used powershell for this
